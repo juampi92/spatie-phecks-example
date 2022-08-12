@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccbd816a07b206f971042295b899d1ba",
+    "content-hash": "a72a2bf4d1f8b568270a483e16c6b43c",
     "packages": [
         {
             "name": "brick/math",
@@ -5498,6 +5498,68 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "juampi92/phecks",
+            "version": "v0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/juampi92/phecks.git",
+                "reference": "57f81431ddb53d1ca8d7122ec5a99cdf0af835fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/juampi92/phecks/zipball/57f81431ddb53d1ca8d7122ec5a99cdf0af835fa",
+                "reference": "57f81431ddb53d1ca8d7122ec5a99cdf0af835fa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^8.0|^9.0",
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/filesystem": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^7.4|^8.0|^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.8",
+                "nunomaduro/larastan": "^2.1",
+                "orchestra/testbench": "^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Juampi92\\Phecks\\PhecksServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Juampi92\\Phecks\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "juampi92",
+                    "email": "juampi92@gmail.com"
+                }
+            ],
+            "description": "A package to run custom PHP checks",
+            "keywords": [
+                "api",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/juampi92/phecks/issues",
+                "source": "https://github.com/juampi92/phecks/tree/v0.3"
+            },
+            "time": "2022-08-10T10:39:03+00:00"
         },
         {
             "name": "laravel/pint",
