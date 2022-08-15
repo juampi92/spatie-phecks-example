@@ -38,7 +38,7 @@ class ConfigFilesMustUseRightCaseCheck implements Check
     }
 
     /**
-     * @param FileMatch $match
+     * @param  FileMatch  $match
      * @return array<ViolationBuilder>
      */
     public function processMatch($match, FileMatch $file): array
