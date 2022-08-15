@@ -15,6 +15,7 @@ return [
 
     'checks' => [
         Checks\Config\ConfigFilesMustUseRightCaseCheck::class,
+        Checks\Config\ConfigKeysMustUseRightCaseCheck::class,
     ],
 
     /*

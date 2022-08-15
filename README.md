@@ -10,7 +10,7 @@ https://spatie.be/guidelines/laravel-php
 
 #### [Configuration](https://spatie.be/guidelines/laravel-php#content-configuration)
   * [x] Configuration files must use kebab-case ([ConfigFilesMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigFilesMustUseRightCaseCheck.php)).
-  * [ ] Configuration keys must use snake_case.
+  * [x] Configuration keys must use snake_case ([ConfigKeysMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigKeysMustUseRightCaseCheck)).
   * [ ] Avoid using the env helper outside of configuration files. Create a configuration value from the env variable like above.
 #### [Artisan Commands](https://spatie.be/guidelines/laravel-php#content-artisan-commands)
   * [ ] The names given to artisan commands should all be kebab-cased.
