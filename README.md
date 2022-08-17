@@ -19,12 +19,12 @@ https://spatie.be/guidelines/laravel-php
   * [ ] Prefer to use the route tuple notation when possible.
   * [x] Route names must use camelCase ([RouteNamesMustUseCamelCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteNamesMustUseCamelCaseCheck.php)).
   * [ ] All routes have an HTTP verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
-  * [x] Route parameters should use camelCase ([RouteParametersMustUseCamelCase](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteParametersMustUseCamelCase.php)).
+  * [x] Route parameters should use camelCase ([RouteParametersMustUseCamelCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteParametersMustUseCamelCaseCheck.php)).
   * [ ] A route url should not start with / unless the url would be an empty string.
 #### [Controllers](https://spatie.be/guidelines/laravel-php#content-controllers)
   * [x] Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions. ([ControllerMethodsMustStickToCrudCheck](spatie-phecks-example/blob/main/phecks/Checks/Controllers/ControllerMethodsMustStickToCrudCheck.php)).
 #### [Views](https://spatie.be/guidelines/laravel-php#content-views)
-  * [ ] View files must use camelCase.
+  * [x] View files must use camelCase. ([ViewFilesMustUseCamelCase](spatie-phecks-example/blob/main/phecks/Checks/Views/ViewFilesMustUseCamelCaseCheck.php)).
 #### [Validation](https://spatie.be/guidelines/laravel-php#content-validation)
   * [ ] All custom validation rules must use snake_case
 #### [Authorization](https://spatie.be/guidelines/laravel-php#content-authorization)

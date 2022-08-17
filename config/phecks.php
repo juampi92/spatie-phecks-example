@@ -20,6 +20,7 @@ return [
         Checks\Routes\RouteNamesMustUseCamelCaseCheck::class,
         Checks\Routes\RouteParametersMustUseCamelCaseCheck::class,
         Checks\Controllers\ControllerMethodsMustStickToCrudCheck::class,
+        Checks\Views\ViewFilesMustUseCamelCaseCheck::class,
     ],
 
     /*
