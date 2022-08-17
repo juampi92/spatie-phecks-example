@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/homePage', function () {
     return view('welcome');
 });
+
+Route::get('/document/{document_id}', function ($document_id) {
+    return $document_id;
+})->name('document.index');
