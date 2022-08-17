@@ -19,6 +19,7 @@ return [
         Checks\Routes\PublicFacingUrlsMustUseKebabCaseCheck::class,
         Checks\Routes\RouteNamesMustUseCamelCaseCheck::class,
         Checks\Routes\RouteParametersMustUseCamelCaseCheck::class,
+        Checks\Controllers\ControllerMethodsMustStickToCrudCheck::class,
     ],
 
     /*

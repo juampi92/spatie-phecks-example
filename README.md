@@ -22,7 +22,7 @@ https://spatie.be/guidelines/laravel-php
   * [x] Route parameters should use camelCase ([RouteParametersMustUseCamelCase](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteParametersMustUseCamelCase.php)).
   * [ ] A route url should not start with / unless the url would be an empty string.
 #### [Controllers](https://spatie.be/guidelines/laravel-php#content-controllers)
-  * [ ] Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions.
+  * [x] Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions. ([ControllerMethodsMustStickToCrudCheck](spatie-phecks-example/blob/main/phecks/Checks/Controllers/ControllerMethodsMustStickToCrudCheck.php)).
 #### [Views](https://spatie.be/guidelines/laravel-php#content-views)
   * [ ] View files must use camelCase.
 #### [Validation](https://spatie.be/guidelines/laravel-php#content-validation)
