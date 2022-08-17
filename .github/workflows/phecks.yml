@@ -1,0 +1,26 @@
+name: Phecks
+
+on:
+  push:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  phecks:
+    name: phecks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Run Phecks
+        run: php artisan phecks:run --format=github
