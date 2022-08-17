@@ -10,7 +10,7 @@ use Juampi92\Phecks\Domain\Sources\ConfigSource;
 use Juampi92\Phecks\Domain\Violations\ViolationBuilder;
 
 /**
- * @phpstan-import-type TConfig from ConfigSource
+ * @template TConfig of array{key: string, value: mixed}
  * @implements Check<TConfig>
  */
 class ConfigKeysMustUseRightCaseCheck implements Check
