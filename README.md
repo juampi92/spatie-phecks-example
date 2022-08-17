@@ -19,7 +19,7 @@ https://spatie.be/guidelines/laravel-php
   * [ ] Prefer to use the route tuple notation when possible.
   * [x] Route names must use camelCase ([RouteNamesMustUseCamelCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteNamesMustUseCamelCaseCheck.php)).
   * [ ] All routes have an HTTP verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
-  * [ ] Route parameters should use camelCase.
+  * [x] Route parameters should use camelCase ([RouteParametersMustUseCamelCase](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteParametersMustUseCamelCase.php)).
   * [ ] A route url should not start with / unless the url would be an empty string.
 #### [Controllers](https://spatie.be/guidelines/laravel-php#content-controllers)
   * [ ] Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy). Extract a new controller if you need other actions.

@@ -18,6 +18,7 @@ return [
         Checks\Config\ConfigKeysMustUseRightCaseCheck::class,
         Checks\Routes\PublicFacingUrlsMustUseKebabCaseCheck::class,
         Checks\Routes\RouteNamesMustUseCamelCaseCheck::class,
+        Checks\Routes\RouteParametersMustUseCamelCaseCheck::class,
     ],
 
     /*
