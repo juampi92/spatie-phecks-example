@@ -10,12 +10,12 @@ https://spatie.be/guidelines/laravel-php
 
 #### [Configuration](https://spatie.be/guidelines/laravel-php#content-configuration)
   * [x] Configuration files must use kebab-case ([ConfigFilesMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigFilesMustUseRightCaseCheck.php)).
-  * [x] Configuration keys must use snake_case ([ConfigKeysMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigKeysMustUseRightCaseCheck)).
+  * [x] Configuration keys must use snake_case ([ConfigKeysMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigKeysMustUseRightCaseCheck.php)).
   * [ ] Avoid using the env helper outside of configuration files. Create a configuration value from the env variable like above.
 #### [Artisan Commands](https://spatie.be/guidelines/laravel-php#content-artisan-commands)
   * [ ] The names given to artisan commands should all be kebab-cased.
 #### [Routing](https://spatie.be/guidelines/laravel-php#content-routing)
-  * [ ] Public-facing urls must use kebab-case.
+  * [x] Public-facing urls must use kebab-case ([PublicFacingUrlsMustUseKebabCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/PublicFacingUrlsMustUseKebabCaseCheck.php)).
   * [ ] Prefer to use the route tuple notation when possible.
   * [ ] Route names must use camelCase.
   * [ ] All routes have an HTTP verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
