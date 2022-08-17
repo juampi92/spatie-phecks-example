@@ -17,7 +17,7 @@ https://spatie.be/guidelines/laravel-php
 #### [Routing](https://spatie.be/guidelines/laravel-php#content-routing)
   * [x] Public-facing urls must use kebab-case ([PublicFacingUrlsMustUseKebabCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/PublicFacingUrlsMustUseKebabCaseCheck.php)).
   * [ ] Prefer to use the route tuple notation when possible.
-  * [ ] Route names must use camelCase.
+  * [x] Route names must use camelCase ([RouteNamesMustUseCamelCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/RouteNamesMustUseCamelCaseCheck.php)).
   * [ ] All routes have an HTTP verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
   * [ ] Route parameters should use camelCase.
   * [ ] A route url should not start with / unless the url would be an empty string.
