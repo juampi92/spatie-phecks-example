@@ -2,15 +2,22 @@
 
 namespace Phecks\Checks\Controllers;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Juampi92\Phecks\Domain\Contracts\Check;
 use Juampi92\Phecks\Domain\DTOs\FileMatch;
 use Juampi92\Phecks\Domain\Extractors\ClassExtractor;
 use Juampi92\Phecks\Domain\Extractors\ReflectionClassExtractor;
 use Juampi92\Phecks\Domain\Extractors\ReflectionMethodExtractor;
 use Juampi92\Phecks\Domain\MatchCollection;
+use Juampi92\Phecks\Domain\Pipes\Extractors\MethodExtractor;
+use Juampi92\Phecks\Domain\Pipes\Filters\WhereExtendsClassFilter;
+use Juampi92\Phecks\Domain\Sources\ClassSource;
 use Juampi92\Phecks\Domain\Sources\FileSource;
 use Juampi92\Phecks\Domain\Violations\ViolationBuilder;
-use ReflectionMethod;
+use Roave\BetterReflection\Reflection\ReflectionClass;
+use Roave\BetterReflection\Reflection\ReflectionMethod;
 
 /**
  * @implements Check<ReflectionMethod>
@@ -27,7 +34,7 @@ class ControllerMethodsMustStickToCrudCheck implements Check
     ];
 
     public function __construct(
-        private readonly FileSource $source
+        private readonly ClassSource $source
     ) {
     }
 
@@ -41,11 +48,9 @@ class ControllerMethodsMustStickToCrudCheck implements Check
     {
         return $this->source
             ->directory('./app/Http/Controllers')
-            ->recursive()
             ->run()
-            ->extract(new ClassExtractor())
-            ->extract(new ReflectionClassExtractor())
-            ->extract(new ReflectionMethodExtractor(ReflectionMethod::IS_PUBLIC))
+            ->pipe(new MethodExtractor(\ReflectionMethod::IS_PUBLIC))
+            ->reject(fn (ReflectionMethod $class): bool => $class->getDeclaringClass()->isTrait())
             ->reject(fn (ReflectionMethod $method) => in_array(
                 $method->getDeclaringClass()->getName(),
                 self::IGNORE_CLASSES

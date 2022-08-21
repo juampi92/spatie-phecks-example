@@ -7,10 +7,11 @@ use Juampi92\Phecks\Domain\Contracts\Check;
 use Juampi92\Phecks\Domain\DTOs\FileMatch;
 use Juampi92\Phecks\Domain\MatchCollection;
 use Juampi92\Phecks\Domain\Sources\RouteCommandSource;
+use Juampi92\Phecks\Domain\Sources\ValueObjects\RouteInfo;
 use Juampi92\Phecks\Domain\Violations\ViolationBuilder;
 
 /**
- * @implements Check<array{name: string}>
+ * @implements Check<RouteInfo>
  */
 class RouteNamesMustUseCamelCaseCheck implements Check
 {
@@ -34,18 +35,18 @@ class RouteNamesMustUseCamelCaseCheck implements Check
         return $this->source
             ->run()
             ->reject(
-                fn (array $route): bool => collect(self::EXCLUDE)
-                    ->contains(fn ($pattern) => Str::is($pattern, $route['name']))
+                fn (RouteInfo $route): bool => collect(self::EXCLUDE)
+                    ->contains(fn ($pattern) => Str::is($pattern, $route->name))
             );
     }
 
     /**
-     * @param  array{name: string}  $match
+     * @param  RouteInfo  $match
      * @return array<ViolationBuilder>
      */
     public function processMatch($match, FileMatch $file): array
     {
-        $violations = Str::of($match['name'])
+        $violations = Str::of($match->name)
             ->explode('.')
             ->reject(fn (string $segment): bool => Str::of($segment)->camel()->value() === $segment);
 

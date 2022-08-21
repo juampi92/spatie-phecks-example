@@ -7,10 +7,11 @@ use Juampi92\Phecks\Domain\Contracts\Check;
 use Juampi92\Phecks\Domain\DTOs\FileMatch;
 use Juampi92\Phecks\Domain\MatchCollection;
 use Juampi92\Phecks\Domain\Sources\RouteCommandSource;
+use Juampi92\Phecks\Domain\Sources\ValueObjects\RouteInfo;
 use Juampi92\Phecks\Domain\Violations\ViolationBuilder;
 
 /**
- * @implements Check<array{uri: string}>
+ * @implements Check<RouteInfo>
  */
 class RouteParametersMustUseCamelCaseCheck implements Check
 {
@@ -34,19 +35,19 @@ class RouteParametersMustUseCamelCaseCheck implements Check
         return $this->source
             ->run()
             ->reject(
-                fn (array $route): bool => collect(self::EXCLUDE)
-                    ->contains(fn ($pattern) => Str::is($pattern, $route['uri']))
+                fn (RouteInfo $route): bool => collect(self::EXCLUDE)
+                    ->contains(fn ($pattern) => Str::is($pattern, $route->uri))
             );
     }
 
     /**
-     * @param  array{uri: string}  $match
+     * @param  RouteInfo  $match
      * @param  FileMatch  $file
      * @return array<ViolationBuilder>
      */
     public function processMatch($match, FileMatch $file): array
     {
-        return Str::matchAll('/\{([^\?\}]+)\??\}/m', $match['uri'])
+        return Str::matchAll('/\{([^\?\}]+)\??\}/m', $match->uri)
             ->reject(fn (string $parameter) => Str::camel($parameter) === $parameter)
             ->map(fn (string $variable) => ViolationBuilder::make()
                     ->message("The route name parameter '{$variable}' must use camelCase."),
