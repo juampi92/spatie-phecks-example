@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/homePage', function () {
+    return view('welcome');
+});
+
+Route::get('/document/{document_id}', function ($document_id) {
+    return $document_id;
+})->name('document.index');
