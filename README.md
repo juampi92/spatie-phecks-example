@@ -1,12 +1,12 @@
 # Spatie Phecks Example
 
+This is an example repository of a Phecks implementation using [Spatie's styleguides](https://spatie.be/guidelines/laravel-php).
+
 ```
 php artisan phecks:run
 ```
 
 ## List of Spatie's style guide
-
-https://spatie.be/guidelines/laravel-php
 
 #### [Configuration](https://spatie.be/guidelines/laravel-php#content-configuration)
   * [x] Configuration files must use kebab-case ([ConfigFilesMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigFilesMustUseRightCaseCheck.php)).
@@ -34,6 +34,6 @@ https://spatie.be/guidelines/laravel-php
 #### Namings:
   * [ ] [Resources](https://spatie.be/guidelines/laravel-php#content-resources-and-transformers) classes must be suffixed with `Resource`.
   * [ ] [Listeners](https://spatie.be/guidelines/laravel-php#content-listeners) classes must be suffixed with `Listener`, and not refer to an Event, but to what they do.
-  * [ ] [Commands](https://spatie.be/guidelines/laravel-php#content-commands) classes must be suffixed with `Command`.
+  * [ ] [Commands](https://spatie.be/guidelines/laravel-php#content-commands) classes must be suffixed with `Command`. ([ConsoleClassesMustBeSuffixedWithCommandCheck](spatie-phecks-example/blob/main/phecks/Checks/Console/ConsoleClassesMustBeSuffixedWithCommandCheck.php)).
   * [ ] [Mailables](https://spatie.be/guidelines/laravel-php#content-mailables) must be suffixed with `Mail`.
   * [ ] [Enums](https://spatie.be/guidelines/laravel-php#content-enums-1) don't need to be suffixed with `Enum`.
