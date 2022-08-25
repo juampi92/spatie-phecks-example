@@ -8,8 +8,12 @@ use Juampi92\Phecks\Domain\Contracts\Check;
 use Juampi92\Phecks\Domain\DTOs\FileMatch;
 use Juampi92\Phecks\Domain\MatchCollection;
 use Juampi92\Phecks\Domain\Sources\RouteCommandSource;
+use Juampi92\Phecks\Domain\Sources\ValueObjects\RouteInfo;
 use Juampi92\Phecks\Domain\Violations\ViolationBuilder;
 
+/**
+ * @implements Check<RouteInfo>
+ */
 class PublicFacingUrlsMustUseKebabCaseCheck implements Check
 {
     private const EXCLUDE = [
@@ -34,7 +38,7 @@ class PublicFacingUrlsMustUseKebabCaseCheck implements Check
     {
         return $this->source
             ->run()
-            ->reject(fn (array $routeInfo): bool => $this->shouldBeExcluded($routeInfo['uri']));
+            ->reject(fn (RouteInfo $routeInfo): bool => $this->shouldBeExcluded($routeInfo->uri));
     }
 
     /**
@@ -42,13 +46,13 @@ class PublicFacingUrlsMustUseKebabCaseCheck implements Check
      * This method must return an array of ViolationBuilder instances.
      * Ignore the match returning an empty array.
      *
-     * @param  array{name: string, uri: string}  $match
+     * @param  RouteInfo  $match
      * @param  FileMatch  $file
      * @return array<ViolationBuilder>
      */
     public function processMatch($match, FileMatch $file): array
     {
-        $violations = $this->getSegments($match['uri'])
+        $violations = $this->getSegments($match->uri)
             ->reject(
                 fn (string $urlSegment) => Str::of($urlSegment)
                     ->camel()->kebab()

@@ -14,9 +14,15 @@ return [
     */
 
     'checks' => [
+        Checks\Artisan\CommandNamesShouldUseKebabCaseCheck::class,
         Checks\Config\ConfigFilesMustUseRightCaseCheck::class,
         Checks\Config\ConfigKeysMustUseRightCaseCheck::class,
+        Checks\Console\ConsoleClassesMustBeSuffixedWithCommandCheck::class,
+        Checks\Controllers\ControllerMethodsMustStickToCrudCheck::class,
         Checks\Routes\PublicFacingUrlsMustUseKebabCaseCheck::class,
+        Checks\Routes\RouteNamesMustUseCamelCaseCheck::class,
+        Checks\Routes\RouteParametersMustUseCamelCaseCheck::class,
+        Checks\Views\ViewFilesMustUseCamelCaseCheck::class,
     ],
 
     /*

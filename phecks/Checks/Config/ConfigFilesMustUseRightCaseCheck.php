@@ -53,8 +53,7 @@ class ConfigFilesMustUseRightCaseCheck implements Check
 
         return [
             ViolationBuilder::make()
-                ->message("Config files must be in kebab-case. Please rename to {$filenameKebab}")
-                ->setTip(''),
+                ->message("Config files must be in kebab-case. Please rename to {$filenameKebab}"),
         ];
     }
 }
