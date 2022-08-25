@@ -34,9 +34,10 @@ class RouteNamesMustUseCamelCaseCheck implements Check
     {
         return $this->source
             ->run()
+            ->reject(fn (RouteInfo $routeInfo) => empty($routeInfo->name))
             ->reject(
                 fn (RouteInfo $route): bool => collect(self::EXCLUDE)
-                    ->contains(fn ($pattern) => Str::is($pattern, $route->name))
+                    ->contains(fn ($pattern) => Str::is($pattern, $route->name ?: ''))
             );
     }
 
@@ -46,7 +47,7 @@ class RouteNamesMustUseCamelCaseCheck implements Check
      */
     public function processMatch($match, FileMatch $file): array
     {
-        $violations = Str::of($match->name)
+        $violations = Str::of($match->name ?: '')
             ->explode('.')
             ->reject(fn (string $segment): bool => Str::of($segment)->camel()->value() === $segment);
 
