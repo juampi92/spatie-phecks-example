@@ -14,6 +14,7 @@ return [
     */
 
     'checks' => [
+        Checks\Artisan\CommandNamesShouldUseKebabCaseCheck::class,
         Checks\Config\ConfigFilesMustUseRightCaseCheck::class,
         Checks\Config\ConfigKeysMustUseRightCaseCheck::class,
         Checks\Console\ConsoleClassesMustBeSuffixedWithCommandCheck::class,

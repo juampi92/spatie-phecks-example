@@ -13,7 +13,7 @@ https://spatie.be/guidelines/laravel-php
   * [x] Configuration keys must use snake_case ([ConfigKeysMustUseRightCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Config/ConfigKeysMustUseRightCaseCheck.php)).
   * [ ] Avoid using the env helper outside of configuration files. Create a configuration value from the env variable like above.
 #### [Artisan Commands](https://spatie.be/guidelines/laravel-php#content-artisan-commands)
-  * [ ] The names given to artisan commands should all be kebab-cased.
+  * [x] The names given to artisan commands should all be kebab-cased. ([CommandNamesShouldUseKebabCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Artisan/CommandNamesShouldUseKebabCaseCheck.php))
 #### [Routing](https://spatie.be/guidelines/laravel-php#content-routing)
   * [x] Public-facing urls must use kebab-case ([PublicFacingUrlsMustUseKebabCaseCheck](spatie-phecks-example/blob/main/phecks/Checks/Routes/PublicFacingUrlsMustUseKebabCaseCheck.php)).
   * [ ] Prefer to use the route tuple notation when possible.
